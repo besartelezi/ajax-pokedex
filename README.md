@@ -20,6 +20,12 @@ I will start out by creating all necessary files, and then playing around with t
 
 Only when that task has been done, will I try and figure out my next move
 
+## Episode 2: The Importance of the Positioning of Your Code
+After having lots and lots and **lots** of trouble with my code, I finally understood what went wrong. And to make sure I'll never ever forget this lesson, I will write it down here:
+##### If you wrote your code flawlessly, you don't see anything wrong with it, but it's not working as intended. Well, chances are you placed outside of your function, so it's doing weird stuff. </br>
+
+The positioning of your code is always of utmost importance, but it is especially important when working with API's. I'm extremely glad that I learned this important lesson now, instead of later when I'm working for a high-end Web Development Company. Hurray for mistakes!
+
 ## Fun Features
 - [ ] Show typing of Pokémon
 - [ ] Show the abilities of Pokémon
