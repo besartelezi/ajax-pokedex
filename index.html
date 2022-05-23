@@ -6,16 +6,47 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<section class="PokedexField">
+<section class="row" id="EntirePokdex">
+    <div class="left-column" id="LeftSidePokedex">
+        <section class="PokedexField">
+            <label for="SearchPokemon"></label>
+            <input type="text" id="SearchPokemon" />
+            <button id="PokemonSearchButton">Send Data</button>
+        </section>
+        <div class ="IDNumber"></div>
+        <section class="ScreenWrapper">
+            <div class="ScreenBackground">
+                <div class="PokemonImage">
+                    <img src="images/pokeball.svg" id="PokemonPicture">
+                </div>
+            </div>
+            <div class="EvolutionRow">
+                <div class="Evolution"></div>
+                <div class="Evolution"></div>
+                <div class="Evolution"></div>
+            </div>
+        </section>
+        <section class="BottomSide">
+            <div class ="Name"></div>
+        </section>
+    </div>
+    <div class="middle-column" id="PokedexFlipThing">
 
-    <label for="SearchPokemon"></label>
-    <input type="text" id="SearchPokemon" />
-    <button id="PokemonSearchButton">Send Data</button>
+    </div>
+    <div class="right-column" id="RightSidePokedex">
+        <div class="PokemonDescription">
 
+        </div>
+        <div class="BlueButtons">
 
+        </div>
+        <div class="Typing">
+            <div class="Type1"></div>
+            <div class="Type2"></div>
+        </div>
+
+    </div>
 </section>
-
-
 
 <script src="pokedex.js"></script>
 </body>
