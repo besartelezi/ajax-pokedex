@@ -26,6 +26,7 @@
         );
         let GetPokemonSpeciesData = await FetchPokemonSpeciesData.json();
 
+        //Fetching the specified Pokemon's evolution chain
         let FetchPokemonEvolutionChain = await fetch(
             GetPokemonSpeciesData.evolution_chain.url
         )
@@ -52,6 +53,7 @@
         }
 
         else if (GetPokemonEvolutionChain.chain.evolves_to[0].evolves_to.length === 0) {
+            //fetching API of the first Pokémon on the evolutionary line
             let FetchFirstForm = await fetch(
                 APIPokemon + GetPokemonEvolutionChain.chain.species.name
             );
@@ -60,6 +62,7 @@
             PokemonFirstFormIMG.src = GetFirstForm.sprites.front_default;
             EvolutionRow.appendChild(PokemonFirstFormIMG)
 
+            //fetching API of the second Pokémon on the evolutionary line
             let FetchSecondForm = await fetch(
                 APIPokemon + GetPokemonEvolutionChain.chain.evolves_to[0].species.name
             );
@@ -141,7 +144,10 @@
         let PokemonTypeBackground = GetPokemonData.types[0].type.name;
         document.body.style.backgroundImage = "url(images/"+PokemonTypeBackground+".jpg)";
 
-
+        if (GetPokemonData.name ==="amoonguss"){
+            const Amoonguss = new Audio('audio/amongus.mp3');
+            Amoonguss.play();
+        }
 
     }
 

@@ -43,14 +43,53 @@ Afterwards, I played around for a bit in paint in order to have a clear view of 
 ![ScreenShot](/images/pokedex-example.png)
 
 
+## Episode 6: "The TriumDonphan Return to Javascript City!"
+After a lot of experimenting, I was finally able to show the entire evolutionary line of every searched Pokémon on the Pokédex. So if you're looking for Amoonguss, the entire Amoonguss evolutionary line will show up! You're probably asking yourself, how did this Sussy Baka figure out how to do that? Well, do not fret, because this Sussy Baka will explain it to you! </br>
+```
+        //Fetching all Pokémon species data
+        let FetchPokemonSpeciesData = await fetch (
+            APIPokemonSpecies + Input
+        );
+        let GetPokemonSpeciesData = await FetchPokemonSpeciesData.json();
+
+        //Fetching the specified Pokemon's evolution chain
+        let FetchPokemonEvolutionChain = await fetch(
+            GetPokemonSpeciesData.evolution_chain.url
+        )
+        let GetPokemonEvolutionChain = await FetchPokemonEvolutionChain.json()
+```
+I started out by fetching the species data from the API, because in that API, you can find the evolution chain ID number of the Pokémon the user has searched for. I then fetch the evolution-chain API. My next step, is to get the names from those Pokémon in the evolution-chain, and fetch **THEIR** API's so that I can access their images. And this is how I went about doing that:
+```
+  else if (GetPokemonEvolutionChain.chain.evolves_to[0].evolves_to.length === 0) {
+            //fetching API of the first Pokémon on the evolutionary line
+            let FetchFirstForm = await fetch(
+                APIPokemon + GetPokemonEvolutionChain.chain.species.name
+            );
+            let GetFirstForm = await FetchFirstForm.json();
+            let PokemonFirstFormIMG = document.createElement("img");
+            PokemonFirstFormIMG.src = GetFirstForm.sprites.front_default;
+            EvolutionRow.appendChild(PokemonFirstFormIMG)
+
+            //fetching API of the second Pokémon on the evolutionary line
+            let FetchSecondForm = await fetch(
+                APIPokemon + GetPokemonEvolutionChain.chain.evolves_to[0].species.name
+            );
+            let GetSecondForm = await FetchSecondForm.json();
+            let PokemonSecondFormIMG = document.createElement("img");
+            PokemonSecondFormIMG.src = GetSecondForm.sprites.front_default;
+            EvolutionRow.appendChild(PokemonSecondFormIMG)
+        }
+```
+This is the code I used for all Pokémon species that can evolve only one time. So this only works for Pokémon like Foongus and it's evolution Amoonguss, who's Pokémon evolution-chain consist of only two Pokémon.
 
 ## Fun Features I would like to add
 - [x] Show typing of Pokémon
 - [x] Change background image of the website to a wallpaper that closely represents the Pokémons type
   * For example, a green background when the Pokémon shown on the Pokédex is a grass Pokémon
-- [ ] Show the entire evolutionary tree of the Pokémon
+- [x] Show the entire evolutionary tree of the Pokémon
 - [ ] Show the abilities of Pokémon
-- [ ] Let the Pokédex do something special when Pokémon #591 appears.
+- [x] Let the Pokédex do something special when Pokémon #591 appears.
+  * Try out this fun feature!
 - [ ] Add a "Previously Searched button", so that the user can go back to the previously viewed Pokémon
   * I think I'll do this by adding an array that will be used to store the date of the Pokémon once the user has clicked on the button that will show them the Pokémon they searched for.
 - [ ] Adding a "next" and "previous" button, so the user can just scroll through the Pokédex even when they're a little unfamiliar with Pokémon.
