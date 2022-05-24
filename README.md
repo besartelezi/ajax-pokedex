@@ -42,7 +42,6 @@ Afterwards, I played around for a bit in paint in order to have a clear view of 
 
 ![ScreenShot](/images/pokedex-example.png)
 
-
 ## Episode 6: "The TriumDonphan Return to Javascript City!"
 After a lot of experimenting, I was finally able to show the entire evolutionary line of every searched Pokémon on the Pokédex. So if you're looking for Amoonguss, the entire Amoonguss evolutionary line will show up! You're probably asking yourself, how did this Sussy Baka figure out how to do that? Well, do not fret, because this Sussy Baka will explain it to you! </br>
 ```
@@ -80,16 +79,20 @@ I started out by fetching the species data from the API, because in that API, yo
             EvolutionRow.appendChild(PokemonSecondFormIMG)
         }
 ```
-This is the code I used for all Pokémon species that can evolve only one time. So this only works for Pokémon like Foongus and it's evolution Amoonguss, who's Pokémon evolution-chain consist of only two Pokémon.
+This is the code I used for all Pokémon species that can evolve only one time. So this only works for Pokémon like Foongus and it's evolution Amoonguss, who's Pokémon evolution-chain consist of only two Pokémon. </br>
+
+Up to this point, I have all the minimum required features the Pokédex must have. But I still want to add the Pokémon descriptions and the Pokémon abilities. Once that is done as well, I will be returning to the Cerulean City Seashore to focus on my CSS styling!
+
 
 ## Fun Features I would like to add
 - [x] Show typing of Pokémon
 - [x] Change background image of the website to a wallpaper that closely represents the Pokémons type
   * For example, a green background when the Pokémon shown on the Pokédex is a grass Pokémon
 - [x] Show the entire evolutionary tree of the Pokémon
-- [ ] Show the abilities of Pokémon
+- [x] Show the abilities of Pokémon
 - [x] Let the Pokédex do something special when Pokémon #591 appears.
-  * Try out this fun feature!
+  * Be sure to try out this fun feature!
+- [ ] Show Pokémon description
 - [ ] Add a "Previously Searched button", so that the user can go back to the previously viewed Pokémon
   * I think I'll do this by adding an array that will be used to store the date of the Pokémon once the user has clicked on the button that will show them the Pokémon they searched for.
 - [ ] Adding a "next" and "previous" button, so the user can just scroll through the Pokédex even when they're a little unfamiliar with Pokémon.

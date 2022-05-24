@@ -4,9 +4,6 @@
     const PokemonSearchButton = document.getElementById("PokemonSearchButton");
     PokemonSearchButton.onclick = async function getPokedexData(){
         const EvolutionRow = document.getElementById("EvolutionRow");
-        while (EvolutionRow.firstChild){
-            EvolutionRow.firstChild.remove()
-        }
 
         let Input = document.getElementById("SearchPokemon").value.toLowerCase();
         //API to all general Pokémon information
@@ -33,7 +30,12 @@
         let GetPokemonEvolutionChain = await FetchPokemonEvolutionChain.json()
 
 
-        //Shows all Eeveelutions
+        //In order to get a random english description from the pokedex, I will have to loop filter the array so that only the english ones are left in a new let variable array
+        //Then, I can math.random one out of that array
+        let PokemonDescription = GetPokemonSpeciesData.flavor_text_entries
+
+        console.log(PokemonDescription)
+        //Shows all Eeveelutions in console log, need to figure out a way to show them all
         if (GetPokemonEvolutionChain.chain.evolves_to.length === 8){
             console.log(GetPokemonEvolutionChain.chain.species.name)
             console.log(GetPokemonEvolutionChain.chain.evolves_to[0].species.name)
@@ -47,12 +49,19 @@
         }
 
         else if (GetPokemonEvolutionChain.chain.evolves_to.length === 0) {
+            while (EvolutionRow.firstChild){
+                EvolutionRow.firstChild.remove()
+            }
+
             let PokemonFirstFormIMG = document.createElement("img");
             PokemonFirstFormIMG.src = GetPokemonData.sprites.front_default;
             EvolutionRow.appendChild(PokemonFirstFormIMG)
         }
 
         else if (GetPokemonEvolutionChain.chain.evolves_to[0].evolves_to.length === 0) {
+            while (EvolutionRow.firstChild){
+                EvolutionRow.firstChild.remove()
+            }
             //fetching API of the first Pokémon on the evolutionary line
             let FetchFirstForm = await fetch(
                 APIPokemon + GetPokemonEvolutionChain.chain.species.name
@@ -72,6 +81,9 @@
             EvolutionRow.appendChild(PokemonSecondFormIMG)
         }
         else {
+            while (EvolutionRow.firstChild){
+                EvolutionRow.firstChild.remove()
+            }
             let FetchFirstForm = await fetch(
                 APIPokemon + GetPokemonEvolutionChain.chain.species.name
             );
@@ -121,6 +133,20 @@
             TypeTwo.innerHTML = "";
         }
 
+        //Pokémon Abilities
+        const AbilityOne = document.getElementById("Ability1");
+        const AbilityTwo = document.getElementById("Ability2");
+        if (GetPokemonData.abilities.length === 1){
+            document.getElementById("AbilityTitles").innerHTML = GetPokemonData.name + " can have the following ability"
+            AbilityOne.innerHTML = GetPokemonData.abilities[0].ability.name
+            AbilityTwo.innerHTML = ""
+        }
+        else {
+            document.getElementById("AbilityTitles").innerHTML = GetPokemonData.name + " can have the following abilities:"
+            AbilityOne.innerHTML = GetPokemonData.abilities[0].ability.name
+            AbilityTwo.innerHTML = GetPokemonData.abilities[1].ability.name
+        }
+
         //Shows Pokémon moves
         if (GetPokemonData.moves.length>10){
             document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following moves:"
@@ -144,6 +170,7 @@
         let PokemonTypeBackground = GetPokemonData.types[0].type.name;
         document.body.style.backgroundImage = "url(images/"+PokemonTypeBackground+".jpg)";
 
+        //Fun Amoonguss feature
         if (GetPokemonData.name ==="amoonguss"){
             const Amoonguss = new Audio('audio/amongus.mp3');
             Amoonguss.play();
