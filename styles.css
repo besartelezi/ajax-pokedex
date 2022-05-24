@@ -1,4 +1,38 @@
 #PokemonPicture{
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
+}
+.Evolution{
+    width: 75px;
+    height: 75px;
+}
+body{
+    background-image: url("images/pokeball-background.jpg");
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}
+.left-column{
+    background-color: #EB5352;
+    align-items: center;
+    width: 40%;
+    margin-left: 5%;
+    padding: 2.5% ;
+
+}
+.right-column{
+    background-color: #EB5352;
+    width: 40%;
+    margin-right: 5%;
+    margin-top: 50px;
+    padding: 2.5% ;
+}
+
+.middle-column{
+    background-color: #EB5352;
+    width: 5%;
+    margin-right: 0.5%;
+    margin-left: 0.5%;
 }

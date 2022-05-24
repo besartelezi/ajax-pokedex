@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Besart's Pokédex</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -10,10 +10,10 @@
     <div class="left-column" id="LeftSidePokedex">
         <section class="PokedexField">
             <label for="SearchPokemon"></label>
-            <input type="text" id="SearchPokemon" />
+            <input type="text" id="SearchPokemon"/>
             <button id="PokemonSearchButton">Send Data</button>
         </section>
-        <div class ="IDNumber"></div>
+        <div class ="IDNumber" id="IDNumber"> ID Number of Pokémon</div>
         <section class="ScreenWrapper">
             <div class="ScreenBackground">
                 <div class="PokemonImage">
@@ -21,13 +21,13 @@
                 </div>
             </div>
             <div class="EvolutionRow">
-                <div class="Evolution"></div>
-                <div class="Evolution"></div>
-                <div class="Evolution"></div>
+                <div class="Evolution" id="BaseForm"> <img src="images/pokeball.svg"> </div>
+                <div class="Evolution" id="EvolutionOne"> <img src="images/pokeball.svg"> </div>
+                <div class="Evolution" id="EvolutionTwo"> <img src="images/pokeball.svg"> </div>
             </div>
         </section>
         <section class="BottomSide">
-            <div class ="Name"></div>
+            <div class ="Name" id="Name">Name of Pokémon</div>
         </section>
     </div>
     <div class="middle-column" id="PokedexFlipThing">
@@ -41,8 +41,8 @@
 
         </div>
         <div class="Typing">
-            <div class="Type1"></div>
-            <div class="Type2"></div>
+            <div class="Type1" id="Type1">Primary Type</div>
+            <div class="Type2" id="Type2">Secondary Type</div>
         </div>
 
     </div>
