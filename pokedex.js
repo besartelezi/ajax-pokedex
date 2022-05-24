@@ -22,6 +22,12 @@
         );
         let GetPokemonSpeciesData = await FetchPokemonSpeciesData.json();
 
+        let FetchPokemonEvolutionChain = await fetch(
+            GetPokemonSpeciesData.evolution_chain.url
+        )
+        let GetPokemonEvolutionChain = await FetchPokemonEvolutionChain.json()
+
+        console.log(GetPokemonEvolutionChain)
 
         //Pokémon name
         const PokemonName = document.getElementById("Name");
@@ -41,8 +47,7 @@
         if (GetPokemonData.types.length>1) {
             TypeOne.innerHTML = GetPokemonData.types[0].type.name;
             TypeTwo.innerHTML = GetPokemonData.types[1].type.name;
-            console.log(GetPokemonData.types[0].type);
-            console.log(GetPokemonData.types[GetPokemonData.types.length -1].type);
+
         }
         else {
             TypeOne.innerHTML = GetPokemonData.types[0].type.name;
@@ -62,23 +67,11 @@
             document.getElementById("PokemonMove8").innerHTML = GetPokemonData.moves[7].move.name
             document.getElementById("PokemonMove9").innerHTML = GetPokemonData.moves[8].move.name
             document.getElementById("PokemonMove10").innerHTML = GetPokemonData.moves[9].move.name
-            console.log(GetPokemonData.moves[0])
-
         }
 
         //need to add all background images as jpeg files
         let PokemonTypeBackground = GetPokemonData.types[0].type.name;
         document.body.style.backgroundImage = "url(images/"+PokemonTypeBackground+".jpg)";
-
-
-
-
-
-
-//        //The first 4 moves of the Pokémon; I might change this later to something more interesting
-//         console.log(GetPokemonData.moves[0].move.name,GetPokemonData.moves[1].move.name,GetPokemonData.moves[2].move.name,GetPokemonData.moves[3].move.name)
-//         //The Pokémons evolutionary tree
-//         console.log(GetPokemonSpeciesData.evolution_chain)
 
 
 
