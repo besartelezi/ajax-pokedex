@@ -51,12 +51,12 @@
         }
         else {
             TypeOne.innerHTML = GetPokemonData.types[0].type.name;
-            TypeTwo.innerHTML = "This Pokémon has no secondary typing";
+            TypeTwo.innerHTML = "";
         }
 
         //Shows Pokémon moves
-        document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following moves:"
         if (GetPokemonData.moves.length>10){
+            document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following moves:"
             document.getElementById("PokemonMove1").innerHTML = GetPokemonData.moves[0].move.name
             document.getElementById("PokemonMove2").innerHTML = GetPokemonData.moves[1].move.name
             document.getElementById("PokemonMove3").innerHTML = GetPokemonData.moves[2].move.name
@@ -67,6 +67,10 @@
             document.getElementById("PokemonMove8").innerHTML = GetPokemonData.moves[7].move.name
             document.getElementById("PokemonMove9").innerHTML = GetPokemonData.moves[8].move.name
             document.getElementById("PokemonMove10").innerHTML = GetPokemonData.moves[9].move.name
+        }
+        else {
+            document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following move:"
+            document.getElementById("PokemonMove1").innerHTML = GetPokemonData.moves[0].move.name
         }
 
         //need to add all background images as jpeg files
