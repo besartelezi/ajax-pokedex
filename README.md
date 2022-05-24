@@ -31,8 +31,10 @@ With the user input, I'm now able to get the Pokémon's name, ID number, the ima
 
 Now I need to create DOM elements in order to make everything visible, once that is out of the way, I have to make the Pokédex look as amazing as possible.
 
-## Episode 4: "HTML-ing The Pokédex, One "
-In order to 
+## Episode 4: "The Path to the HTML League!"
+In order to make the Pokédex look as good as possible, I need to have a clear structure in mind for my HTML. So I kept in mind how I want it to look while adding all the HTML elements. </br>
+
+Now that I'm more experienced in Javascript as well, I knew what to add and where in order to place all the information of the Pokémon that will appear in an orderly and fun way.
 
 ## Episode 5: "CSS: (The) Cerulean City Seashore!" 
 The first thing I did before starting on the styling of the page, was make a color scheme that was based on the Pokédex. You can find [the colorscheme here!](https://coolors.co/1f2025-a10001-eb5352-fef3ef-88c9f1-5182ac-7bc87a) </br>
@@ -44,9 +46,9 @@ Afterwards, I played around for a bit in paint in order to have a clear view of 
 
 ## Fun Features I would like to add
 - [x] Show typing of Pokémon
-- [ ] Change background image of the website to a wallpaper that closely represents the Pokémons type
+- [x] Change background image of the website to a wallpaper that closely represents the Pokémons type
   * For example, a green background when the Pokémon shown on the Pokédex is a grass Pokémon
-- [ ] Show the entire evolutionary tree of the Pokémon, and 
+- [ ] Show the entire evolutionary tree of the Pokémon
 - [ ] Show the abilities of Pokémon
 - [ ] Let the Pokédex do something special when Pokémon #591 appears.
 - [ ] Add a "Previously Searched button", so that the user can go back to the previously viewed Pokémon
