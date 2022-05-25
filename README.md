@@ -89,6 +89,12 @@ Getting the array with all the Pokémon descriptions is easy, but filtering out 
 After trying to make it work with loops, and failing yet again, I went back and tried to do it with a filter() again. This time, I finally made it work. The reason why it didn't work the first time, was because I used an "=", instead of an "===". This *traumatizing* experience will forever haunt me,and I solemnly swear that I will **NEVER** make this mistake again. </br>
 
 I'm done with all the Javascript features for now, so I'll be heading back to the Cerulean City Seashore and try to make my Pokédex look as amazing as possible!
+
+## Episode 8: "Creating a Tentacool Styling!"
+
+## Episode 9: "Why Did My Opponent in The Pokémon League Use a Darn Darkrai and an OP Latios?! Arent't There Any Referees Around This Guy Has to be Hacking To Get These Event Pokémon!"
+
+
 ## Fun Features I would like to add
 - [x] Show typing of Pokémon
 - [x] Change background image of the website to a wallpaper that closely represents the Pokémons type

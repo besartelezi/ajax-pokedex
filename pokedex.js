@@ -1,4 +1,3 @@
-(() => {
     const PokemonSearchButton = document.getElementById("PokemonSearchButton");
     PokemonSearchButton.onclick = async function getPokedexData(){
         const EvolutionRow = document.getElementById("EvolutionRow");
@@ -38,16 +37,37 @@
         PokemonDescription.innerHTML = EnglishDescriptionArray[Math.floor(Math.random()*EnglishDescriptionArray.length)].flavor_text
 
         //Shows all Eeveelutions in console log, need to figure out a way to show them all
-        if (GetPokemonEvolutionChain.chain.evolves_to.length === 8){
-            console.log(GetPokemonEvolutionChain.chain.species.name)
-            console.log(GetPokemonEvolutionChain.chain.evolves_to[0].species.name)
-            console.log(GetPokemonEvolutionChain.chain.evolves_to[1].species.name)
-            console.log(GetPokemonEvolutionChain.chain.evolves_to[2].species.name)
-            console.log(GetPokemonEvolutionChain.chain.evolves_to[3].species.name)
-            console.log(GetPokemonEvolutionChain.chain.evolves_to[4].species.name)
-            console.log(GetPokemonEvolutionChain.chain.evolves_to[5].species.name)
-            console.log(GetPokemonEvolutionChain.chain.evolves_to[6].species.name)
-            console.log(GetPokemonEvolutionChain.chain.evolves_to[7].species.name)
+        if (GetPokemonEvolutionChain.chain.evolves_to.length > 1){
+            while (EvolutionRow.firstChild){
+                EvolutionRow.firstChild.remove()
+            }
+            let FetchFirstForm = await fetch(
+                APIPokemon + GetPokemonEvolutionChain.chain.species.name
+            );
+            let GetFirstForm = await FetchFirstForm.json();
+            let PokemonFirstFormIMG = document.createElement("img");
+            PokemonFirstFormIMG.src = GetFirstForm.sprites.front_default;
+            EvolutionRow.appendChild(PokemonFirstFormIMG)
+            for (i=0; i < GetPokemonEvolutionChain.chain.evolves_to.length; i++){
+                //fetching API of the second Pokémon on the evolutionary line
+                let FetchSecondForm = await fetch(
+                    APIPokemon + GetPokemonEvolutionChain.chain.evolves_to[i].species.name
+                );
+                let GetSecondForm = await FetchSecondForm.json();
+                let PokemonSecondFormIMG = document.createElement("img");
+                PokemonSecondFormIMG.src = GetSecondForm.sprites.front_default;
+                EvolutionRow.appendChild(PokemonSecondFormIMG)
+
+                for (j=0; j < GetPokemonEvolutionChain.chain.evolves_to[i].evolves_to.length; j++) {
+                    let FetchSecondForm = await fetch(
+                        APIPokemon + GetPokemonEvolutionChain.chain.evolves_to[i].evolves_to[j].species.name
+                    );
+                    let GetSecondForm = await FetchSecondForm.json();
+                    let PokemonSecondFormIMG = document.createElement("img");
+                    PokemonSecondFormIMG.src = GetSecondForm.sprites.front_default;
+                    EvolutionRow.appendChild(PokemonSecondFormIMG)
+                    }
+                }
         }
 
         else if (GetPokemonEvolutionChain.chain.evolves_to.length === 0) {
@@ -121,7 +141,6 @@
         //Image of Pokemon
         const PokemonPicture = document.getElementById("PokemonPicture");
         PokemonPicture.src = GetPokemonData.sprites.other.home.front_default;
-        console.log(GetPokemonData.sprites.other.home.front_default)
 
         //Will change this to the images instead of just text
         const TypeOne = document.getElementById("Type1");
@@ -151,24 +170,20 @@
         }
 
         //Shows Pokémon moves
-        if (GetPokemonData.moves.length>10){
-            document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following moves:"
-            document.getElementById("PokemonMove1").innerHTML = GetPokemonData.moves[0].move.name
-            document.getElementById("PokemonMove2").innerHTML = GetPokemonData.moves[1].move.name
-            document.getElementById("PokemonMove3").innerHTML = GetPokemonData.moves[2].move.name
-            document.getElementById("PokemonMove4").innerHTML = GetPokemonData.moves[3].move.name
-            document.getElementById("PokemonMove5").innerHTML = GetPokemonData.moves[4].move.name
-            document.getElementById("PokemonMove6").innerHTML = GetPokemonData.moves[5].move.name
-            document.getElementById("PokemonMove7").innerHTML = GetPokemonData.moves[6].move.name
-            document.getElementById("PokemonMove8").innerHTML = GetPokemonData.moves[7].move.name
-            document.getElementById("PokemonMove9").innerHTML = GetPokemonData.moves[8].move.name
-            document.getElementById("PokemonMove10").innerHTML = GetPokemonData.moves[9].move.name
-        }
-        else if (GetPokemonData.moves.length === 1){
+
+        if (GetPokemonData.moves.length === 1){
             document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following move:"
             document.getElementById("PokemonMove1").innerHTML = GetPokemonData.moves[0].move.name
         }
-
+        else {
+            document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following moves:"
+            for (i = 0; i < 4 ; i++) {
+                let PokemonMoves = document.getElementById("PokemonMoves");
+                let PokemonMoveText = document.createElement("div");
+                console.log(GetPokemonData.moves[i].move.name)
+                PokemonMoves.appendChild(PokemonMoveText)
+            }
+        }
         //need to add all background images as jpeg files
         let PokemonTypeBackground = GetPokemonData.types[0].type.name;
         document.body.style.backgroundImage = "url(images/"+PokemonTypeBackground+".jpg)";
@@ -180,5 +195,3 @@
         }
 
     }
-
-})();

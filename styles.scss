@@ -1,107 +1,102 @@
-#PokemonPicture {
+$color-lightred: #EB5352;
+$color-darkred: #A10001;
+$color-black: #1F2025;
+$color-white: #FEF3EF;
+$color-lightblue: #88C9F1;
+$color-darkblue: #5182AC;
+$color-green: #7BC87A;
+
+#PokemonPicture{
   width: 200px;
   height: 200px;
 }
-
-.Evolution {
+.Evolution{
   width: 75px;
   height: 75px;
 }
-
-body {
+body{
   background-image: url("images/pokeball-background.jpg");
 }
-
-.row {
+.row{
   display: flex;
   flex-direction: row;
   margin-top: 2%;
 }
-
-.left-column {
+.left-column{
   display: inline-grid;
-  background-color: #EB5352;
+  background-color: $color-lightred;
   align-items: center;
   width: 40%;
   margin-left: 5%;
-  padding: 2.5%;
+  padding: 2.5% ;
   height: 550px;
   outline-style: solid;
   outline-width: 5px;
-  outline-color: #A10001;
+  outline-color: $color-darkred;
 }
-
-.right-column {
-  background-color: #EB5352;
+.right-column{
+  background-color: $color-lightred;
   width: 40%;
   margin-left: -2.5%;
   margin-right: 5%;
   margin-top: 50px;
-  padding: 2.5%;
+  padding: 2.5% ;
   height: 450px;
   outline-style: solid;
   outline-width: 5px;
-  outline-color: #A10001;
+  outline-color: $color-darkred;
 }
 
-.middle-column {
-  background-color: #A10001;
+.middle-column{
+  background-color: $color-darkred;
   width: 5%;
   outline-style: solid;
   outline-width: 5px;
-  outline-color: #A10001;
+  outline-color: $color-darkred;
 }
-
-.PokedexField {
+.PokedexField{
   display: inline-flex;
   justify-content: center;
 }
-
 #SearchPokemon {
-  background-color: #FEF3EF;
+  background-color: $color-white;
   height: 25px;
   width: 240px;
-  border: #FEF3EF;
+  border: $color-white;
   border-radius: 5px;
   margin-right: auto;
 }
-
-#PokemonSearchButton {
+#PokemonSearchButton{
   height: 29px;
   width: 240px;
-  background-color: #7BC87A;
+  background-color: $color-green;
   cursor: pointer;
-  border: #7BC87A;
+  border: $color-green;
   border-radius: 5px;
   border-style: outset;
-  color: #1F2025;
+  color: $color-black;
   font-weight: bold;
 }
-
-.ScreenWrapper {
+.ScreenWrapper{
   display: inline-grid;
-  background-color: #FEF3EF;
+  background-color: $color-white;
   padding: 0 30px 30px 30px;
   justify-content: center;
   text-align: center;
 }
-
-.IDNumber {
+.IDNumber{
   display: flex;
   justify-content: center;
   padding: 15px 0 15px 0;
   font-weight: bold;
   font-size: 20px;
   font-family: sans-serif;
-  background-color: #7BC87A;
+  background-color: $color-green;
 }
-
-#Name {
+#Name{
   margin-top: 30px;
   font-weight: bold;
   font-size: 30px;
   font-family: sans-serif;
   text-transform: capitalize;
 }
-
-/*# sourceMappingURL=styles.css.map */
