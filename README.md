@@ -83,7 +83,12 @@ This is the code I used for all Pokémon species that can evolve only one time. 
 
 Up to this point, I have all the minimum required features the Pokédex must have. But I still want to add the Pokémon descriptions and the Pokémon abilities. Once that is done as well, I will be returning to the Cerulean City Seashore to focus on my CSS styling!
 
+## Episode 7: "Help Me I Can't Get Out of Javascript City!"
+Getting the array with all the Pokémon descriptions is easy, but filtering out all the non-English descriptions is very tough. I have tried using filter(), but I still was unable to achieve the desired result. </br>
 
+After trying to make it work with loops, and failing yet again, I went back and tried to do it with a filter() again. This time, I finally made it work. The reason why it didn't work the first time, was because I used an "=", instead of an "===". This *traumatizing* experience will forever haunt me,and I solemnly swear that I will **NEVER** make this mistake again. </br>
+
+I'm done with all the Javascript features for now, so I'll be heading back to the Cerulean City Seashore and try to make my Pokédex look as amazing as possible!
 ## Fun Features I would like to add
 - [x] Show typing of Pokémon
 - [x] Change background image of the website to a wallpaper that closely represents the Pokémons type
@@ -92,7 +97,7 @@ Up to this point, I have all the minimum required features the Pokédex must hav
 - [x] Show the abilities of Pokémon
 - [x] Let the Pokédex do something special when Pokémon #591 appears.
   * Be sure to try out this fun feature!
-- [ ] Show Pokémon description
+- [x] Show Pokémon description
 - [ ] Add a "Previously Searched button", so that the user can go back to the previously viewed Pokémon
   * I think I'll do this by adding an array that will be used to store the date of the Pokémon once the user has clicked on the button that will show them the Pokémon they searched for.
 - [ ] Adding a "next" and "previous" button, so the user can just scroll through the Pokédex even when they're a little unfamiliar with Pokémon.

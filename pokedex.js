@@ -1,6 +1,4 @@
 (() => {
-
-
     const PokemonSearchButton = document.getElementById("PokemonSearchButton");
     PokemonSearchButton.onclick = async function getPokedexData(){
         const EvolutionRow = document.getElementById("EvolutionRow");
@@ -29,12 +27,16 @@
         )
         let GetPokemonEvolutionChain = await FetchPokemonEvolutionChain.json()
 
+        //Getting all Pokémon descriptions
+        let PokemonAllDescriptionsArray = GetPokemonSpeciesData.flavor_text_entries
+        //Filters out all the other languages, leaving only the English ones in a new array
+        let EnglishDescriptionArray = PokemonAllDescriptionsArray.filter(function (e){
+            return e.language.name === "en"
+        })
+        //InnerHTML'ing a random English Pokémon description
+        let PokemonDescription = document.getElementById("PokemonDescriptionText");
+        PokemonDescription.innerHTML = EnglishDescriptionArray[Math.floor(Math.random()*EnglishDescriptionArray.length)].flavor_text
 
-        //In order to get a random english description from the pokedex, I will have to loop filter the array so that only the english ones are left in a new let variable array
-        //Then, I can math.random one out of that array
-        let PokemonDescription = GetPokemonSpeciesData.flavor_text_entries
-
-        console.log(PokemonDescription)
         //Shows all Eeveelutions in console log, need to figure out a way to show them all
         if (GetPokemonEvolutionChain.chain.evolves_to.length === 8){
             console.log(GetPokemonEvolutionChain.chain.species.name)
@@ -118,7 +120,8 @@
 
         //Image of Pokemon
         const PokemonPicture = document.getElementById("PokemonPicture");
-        PokemonPicture.src = GetPokemonData.sprites.front_default;
+        PokemonPicture.src = GetPokemonData.sprites.other.home.front_default;
+        console.log(GetPokemonData.sprites.other.home.front_default)
 
         //Will change this to the images instead of just text
         const TypeOne = document.getElementById("Type1");
