@@ -177,12 +177,10 @@
         }
         else {
             document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following moves:"
-            for (i = 0; i < 4 ; i++) {
-                let PokemonMoves = document.getElementById("PokemonMoves");
-                let PokemonMoveText = document.createElement("div");
-                console.log(GetPokemonData.moves[i].move.name)
-                PokemonMoves.appendChild(PokemonMoveText)
-            }
+            document.getElementById("PokemonMove1").innerHTML = GetPokemonData.moves[0].move.name
+            document.getElementById("PokemonMove2").innerHTML = GetPokemonData.moves[1].move.name
+            document.getElementById("PokemonMove3").innerHTML = GetPokemonData.moves[2].move.name
+            document.getElementById("PokemonMove4").innerHTML = GetPokemonData.moves[3].move.name
         }
         //need to add all background images as jpeg files
         let PokemonTypeBackground = GetPokemonData.types[0].type.name;
