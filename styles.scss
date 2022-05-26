@@ -7,6 +7,7 @@ $color-darkblue: #5182AC;
 $color-green: #7BC87A;
 
 #PokemonPicture{
+  margin-top: 15px;
   width: 200px;
   height: 200px;
 }
@@ -29,7 +30,7 @@ body{
   width: 40%;
   margin-left: 5%;
   padding: 2.5% ;
-  height: 550px;
+  height: 47rem;
   outline-style: solid;
   outline-width: 5px;
   outline-color: $color-darkred;
@@ -41,10 +42,13 @@ body{
   margin-right: 5%;
   margin-top: 50px;
   padding: 2.5% ;
-  height: 450px;
+  height: 41rem;
   outline-style: solid;
   outline-width: 5px;
   outline-color: $color-darkred;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .middle-column{
@@ -76,6 +80,7 @@ body{
   border-style: outset;
   color: $color-black;
   font-weight: bold;
+  font-family: "Pokemon GB", sans-serif;
 }
 .ScreenWrapper{
   display: inline-grid;
@@ -83,6 +88,7 @@ body{
   padding: 0 30px 30px 30px;
   justify-content: center;
   text-align: center;
+  border-radius: 35px;
 }
 .IDNumber{
   display: flex;
@@ -90,13 +96,98 @@ body{
   padding: 15px 0 15px 0;
   font-weight: bold;
   font-size: 20px;
-  font-family: sans-serif;
-  background-color: $color-green;
+  background-color: $color-lightblue ;
+  font-family: "Pokemon GB", sans-serif;
+  border-radius: 35px;
+
+}
+#IDNumber{
+  font-family: "Pokemon GB", sans-serif;
 }
 #Name{
   margin-top: 30px;
   font-weight: bold;
   font-size: 30px;
-  font-family: sans-serif;
   text-transform: capitalize;
+  font-family: "Pokemon GB", sans-serif;
+  margin-bottom: 45px;
+}
+.EvolutionRow > *{
+  display: inline-flex;
+  justify-content: center;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: $color-lightblue ;
+  font-family: "Pokemon GB", sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 75px;
+  outline-color: $color-lightblue;
+}
+.EvolutionRow >*:hover{
+  background-color: $color-darkblue;
+}
+.PokemonDescriptionScreen{
+  display: flex;
+  background-color: $color-black;
+  color: $color-white;
+  padding: 25px;
+  flex-direction: column;
+  align-items:center;
+  border-radius: 35px;
+  font-family: "Pokemon GB", sans-serif;
+  text-align: center;
+}
+.BlueButtonsTitle, #AbilityTitles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin-top: 10px;
+  font-family: "Pokemon GB", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 15px;
+
+}
+.BlueButtonsComplete{
+  display: table-cell;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+
+}
+.BlueButtons{
+  background-color: $color-lightblue;
+  align-items: center;
+  padding: 15px 35px 15px 35px;
+  border-style: outset;
+  border-color: $color-lightblue;
+  font-family: "Pokemon GB", sans-serif;
+}
+.Typing{
+  margin-top: 30px;
+  display: flex;
+
+}
+#TypingTitle >*{
+  display: inline-block;
+  width: 125px;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 50px 0 50px;
+}
+.Ability{
+  display: table-cell;
+  align-items: center;
+  text-align: center;
+  background-color: $color-green;
+  padding: 15px 35px 15px 35px;
+  border-style: outset;
+  border-color: $color-green;
+  font-family: "Pokemon GB", sans-serif;
+  width: 500px;
 }

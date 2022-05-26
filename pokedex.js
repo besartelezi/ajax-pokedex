@@ -143,16 +143,25 @@
         PokemonPicture.src = GetPokemonData.sprites.other.home.front_default;
 
         //Will change this to the images instead of just text
-        const TypeOne = document.getElementById("Type1");
-        const TypeTwo = document.getElementById("Type2");
+        const Typing = document.getElementById("TypingTitle")
         if (GetPokemonData.types.length>1) {
-            TypeOne.innerHTML = GetPokemonData.types[0].type.name;
-            TypeTwo.innerHTML = GetPokemonData.types[1].type.name;
-
+            while (Typing.firstChild){
+                Typing.firstChild.remove()
+            }
+            let TypeOne = document.createElement("img");
+            TypeOne.src = "images/types/"+GetPokemonData.types[0].type.name+".png"
+            Typing.appendChild(TypeOne)
+            let TypeTwo = document.createElement("img");
+            TypeTwo.src = "images/types/"+GetPokemonData.types[1].type.name+".png"
+            Typing.appendChild(TypeTwo)
         }
         else {
-            TypeOne.innerHTML = GetPokemonData.types[0].type.name;
-            TypeTwo.innerHTML = "";
+            while (Typing.firstChild){
+                Typing.firstChild.remove()
+            }
+            let TypeOne = document.createElement("img");
+            TypeOne.src = "images/types/"+GetPokemonData.types[0].type.name+".png"
+            Typing.appendChild(TypeOne)
         }
 
         //Pokémon Abilities
@@ -160,27 +169,30 @@
         const AbilityTwo = document.getElementById("Ability2");
         if (GetPokemonData.abilities.length === 1){
             document.getElementById("AbilityTitles").innerHTML = GetPokemonData.name + " can have the following ability"
-            AbilityOne.innerHTML = GetPokemonData.abilities[0].ability.name
+            AbilityOne.innerHTML = GetPokemonData.abilities[0].ability.name.replace("-"," ")
             AbilityTwo.innerHTML = ""
         }
         else {
             document.getElementById("AbilityTitles").innerHTML = GetPokemonData.name + " can have the following abilities:"
-            AbilityOne.innerHTML = GetPokemonData.abilities[0].ability.name
-            AbilityTwo.innerHTML = GetPokemonData.abilities[1].ability.name
+            AbilityOne.innerHTML = GetPokemonData.abilities[0].ability.name.replace("-"," ")
+            AbilityTwo.innerHTML = GetPokemonData.abilities[1].ability.name.replace("-"," ")
         }
 
         //Shows Pokémon moves
 
         if (GetPokemonData.moves.length === 1){
             document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following move:"
-            document.getElementById("PokemonMove1").innerHTML = GetPokemonData.moves[0].move.name
+            document.getElementById("PokemonMove1").innerHTML = GetPokemonData.moves[0].move.name.replace("-"," ")
+            document.getElementById("PokemonMove2").innerHTML = " ";
+            document.getElementById("PokemonMove3").innerHTML = " ";
+            document.getElementById("PokemonMove4").innerHTML = " ";
         }
         else {
             document.getElementById('PokemonMovesTitle').innerHTML = GetPokemonData.name + " can learn the following moves:"
-            document.getElementById("PokemonMove1").innerHTML = GetPokemonData.moves[0].move.name
-            document.getElementById("PokemonMove2").innerHTML = GetPokemonData.moves[1].move.name
-            document.getElementById("PokemonMove3").innerHTML = GetPokemonData.moves[2].move.name
-            document.getElementById("PokemonMove4").innerHTML = GetPokemonData.moves[3].move.name
+            document.getElementById("PokemonMove1").innerHTML = GetPokemonData.moves[0].move.name.replace("-"," ")
+            document.getElementById("PokemonMove2").innerHTML = GetPokemonData.moves[1].move.name.replace("-"," ")
+            document.getElementById("PokemonMove3").innerHTML = GetPokemonData.moves[2].move.name.replace("-"," ")
+            document.getElementById("PokemonMove4").innerHTML = GetPokemonData.moves[3].move.name.replace("-"," ")
         }
         //need to add all background images as jpeg files
         let PokemonTypeBackground = GetPokemonData.types[0].type.name;
