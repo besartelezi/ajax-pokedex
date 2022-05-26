@@ -91,9 +91,14 @@ After trying to make it work with loops, and failing yet again, I went back and 
 I'm done with all the Javascript features for now, so I'll be heading back to the Cerulean City Seashore and try to make my Pokédex look as amazing as possible!
 
 ## Episode 8: "Creating a Tentacool Styling!"
+I was able to create a styling I can be tootin' proud of, but it's not as responsive as I would like. I tried working with display:flex, but I still don't understand it completely, but I'm sure that this is one step in the right direction. </br>
 
-## Episode 9: "Why Did My Opponent in The Pokémon League Use a Darn Darkrai and an OP Latios?! Arent't There Any Referees Around This Guy Has to be Hacking To Get These Event Pokémon!"
+This is my second project that I used a custom font on that isn't a free Google font. Creating that was also a hassle, but ultimately, it was worth it. I used the Pokémon Gameboy font for the Pokédex, used an inline border to give it a real authentic "Playing Pokémon on the Gameboy while hiding in your bed because your parents told you that you can'y play anymore"-kind of feel.
 
+## Episode 9: "Season Finale: Reflection!"
+All in all, I loved this project from the bottom of my heart. Javascript is one of the most fun and challenging languages I have learned so far. Through this project, I've become more familiar with API's and loops. Loops especially, can be very helpful. I still have struggled a **lot** with certain tasks, like fetching, and I can definitely see some parts of my code that could be optimized. But ultimately, that's the goal here. To understand what I could improve on. </br>
+
+I believe that this project is the first big step I've taken into becoming a pro Web Developer. I can definitely look back on this project with pride. Not only for creating an awesome Pokédex, but because of all the mistakes I made and all the valuable lessons I learned.
 
 ## Fun Features I would like to add
 - [x] Show typing of Pokémon
@@ -108,3 +113,4 @@ I'm done with all the Javascript features for now, so I'll be heading back to th
   * I think I'll do this by adding an array that will be used to store the date of the Pokémon once the user has clicked on the button that will show them the Pokémon they searched for.
 - [ ] Adding a "next" and "previous" button, so the user can just scroll through the Pokédex even when they're a little unfamiliar with Pokémon.
 - [ ] Once I'm more familiar with animations, I'd like to revisit this project and when people open the website, they're greeted by a closed Pokédex. Then, when they click on a button on the left side of the Pokédex, it opens.
+- [ ] Check the styling again, make everything more responsive, so the Pokédex looks amazing on all screens
